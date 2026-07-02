@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقعي الشخصي | استشارات عقارية واستثمارية</title>
+    <!-- خط جرجير من جوجل لتصميم أنيق -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #c5a880; /* لون ذهبي راقي للاستشارات */
+            --secondary-color: #1e293b; /* كحلي غامق للملف الشخصي */
+            --bg-light: #f8fafc;
+            --text-dark: #0f172a;
+            --text-light: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* الهيدر ونظام التنقل */
+        header {
+            background-color: var(--secondary-color);
+            padding: 20px 10%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header .logo {
+            color: var(--primary-color);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* قسم التعريف (مين أنا) */
+        .hero {
+            padding: 150px 10% 80px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: #cbd5e1;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            background-color: #b3956b;
+        }
+
+        /* قسم الخدمات */
+        .services {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .services h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card .icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        /* قسم الفيديو المعرفي */
+        .video-section {
+            background-color: #f1f5f9;
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .video-section h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            /* لضمان أبعاد الفيديو الصحيحة (16:9) */
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+        }
+
+        .video-container iframe, .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* قسم تواصل معي (الفوتر) */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            padding: 60px 10% 30px;
+            text-align: center;
+        }
+
+        footer h2 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            margin: 30px 0;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        footer .copy {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+        }
+
+        /* التجاوب مع الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 5%;
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+            .social-links a {
+                display: block;
+                margin: 10px auto;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر (شريط التنقل) -->
+    <header>
+        <div class="logo">Ebrahim Khaled</div>
+        <nav>
+            <a href="#about">مَن أنا</a>
+            <a href="#services">خدماتي</a>
+            <a href="#video">الفيديو</a>
+            <a href="#contact">تواصل معي</a>
+        </nav>
+    </header>
+
+    <!-- قسم التعريف وزر الحجز -->
+    <section class="hero" id="about">
+        <h1>مرحباً، أنا <span>ابراهيم خالد</span></h1>
+        <p>مستشار متخصص في التطوير العقاري والتحليل الاستثماري. أساعدك في اتخاذ القرارات المالية والعقارية الصحيحة لتنمية ثروتك وتأمين مستقبلك بأمان.</p>
+        <a href="#contact" class="btn-cta">احجز استشارتك الآن</a>
+    </section>
+
+    <!-- قسم الخدمات -->
+    <section class="services" id="services">
+        <h2>الخدمات الاستشارية</h2>
+        <div class="services-grid">
+            <!-- الخدمة الأولى -->
+            <div class="service-card">
+                <div class="icon">🏢</div>
+                <h3>استشارات عقارية</h3>
+                <p>توجيهك لأفضل الفرص العقارية (سواء سكنية أو تجارية) وتوجيه الاستثمار نحو المشاريع ذات العائد الأعلى والريسك الأقل.</p>
+            </div>
+            <!-- الخدمة الثانية -->
+            <div class="service-card">
+                <div class="icon">📈</div>
+                <h3>استشارات استثمارية</h3>
+                <p>تحليل الأسواق، وبناء المحافظ الاستثمارية المتنوعة، وتطوير خطط مالية مخصصة تناسب أهدافك على المدى القريب والبعيد.</p>
+            </div>
+        </div>
+    </section>
+<section class="video-section" id="video">
+        <h2>تعرّف عليّ عن قرب</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/LwL24fGL_YY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- قسم التواصل (الفوتر) -->
+    <footer id="contact">
+        <h2>ابدأ رحلتك الاستثمارية اليوم</h2>
+        <p>يسعدني تواصلك معي لحجز جلسة استشارية مخصصة لمناقشة أهدافك.</p>
+        
+        <!-- روابط السوشيال ميديا والتواصل -->
+        <div class="social-links">
+            <a href="https://wa.me/+971544484712" target="_blank">واتساب 🟢</a>
+            <a href="https://www.facebook.com/share/19MkhLAvJM/?mibextid=wwXIfr" target="_blank">الفيس بوك 🔵</a>
+            <a href="https://www.tiktok.com/@ebrahim_khaled99?_r=1&_t=ZS-97gbQ36AhqX" target="_blank"> تيك توك</a>
+        </div>
+
+        <div class="copy">
+            &copy; 2026 جميع الحقوق محفوظة لاسمك الشخصي.
+        </div>
+    </footer>
+
+</body>
+</html>
